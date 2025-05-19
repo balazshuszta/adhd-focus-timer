@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -23,7 +23,6 @@ jobs:
 
       - name: Build project
         run: |
-          dotnet tool restore
           dotnet build
           dotnet publish -c Release -o output
 

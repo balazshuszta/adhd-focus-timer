@@ -21,11 +21,10 @@ jobs:
       - name: Install WebSharper templates
         run: dotnet new -i WebSharper.Templates
 
-      - name:- name: Build project
-  run: |
-    dotnet build AdhdFocusTimer.sln
-    dotnet publish AdhdFocusTimer.Client/AdhdFocusTimer.Client.fsproj -c Release -o output
-
+      - name: Build project
+        run: |
+          dotnet build AdhdFocusTimer.sln
+          dotnet publish AdhdFocusTimer.Client/AdhdFocusTimer.Client.fsproj -c Release -o output
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

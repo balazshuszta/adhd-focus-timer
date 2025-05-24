@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let round = 1;
     let inBreak = false;
 
-    const brownNoise = new Audio("https://cdn.pixabay.com/audio/2022/03/22/audio_37b4ad69f1.mp3");
+    const brownNoise = new Audio("brown-noise.mp3");
     brownNoise.loop = true;
 
     const chime = new Audio("https://cdn.pixabay.com/audio/2021/08/04/audio_71a8aeef67.mp3");
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         running = false;
                         inBreak = !inBreak;
                         if (inBreak) {
-                            time = 300 + ((round - 1) * 300); // növekvő szünetidő
+                            time = 300 + ((round - 1) * 300);
                             chime.play();
                             brownNoise.pause();
                         } else {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         render();
                         document.getElementById("start").textContent = "Pause";
                         running = true;
-                        document.getElementById("start").click(); // újraindítjuk automatikusan
+                        document.getElementById("start").click();
                     }
                 }, 1000);
                 if (!inBreak) brownNoise.play();
